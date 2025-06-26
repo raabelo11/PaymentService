@@ -11,11 +11,13 @@ namespace PaymentService.Infrastructure.Data.Context
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Boleto> Boletos { get; set; }
+        public DbSet<HistBoleto> HistBoletos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
             modelBuilder.ApplyConfiguration(new BoletoConfiguration());
+            modelBuilder.ApplyConfiguration(new HistBoletoConfiguration());
         }
     }
 }

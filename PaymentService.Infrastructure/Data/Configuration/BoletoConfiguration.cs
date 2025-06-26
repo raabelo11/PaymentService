@@ -10,6 +10,8 @@ namespace PaymentService.Infrastructure.Data.Configuration
         {
             builder.HasKey(b => b.IdBoleto);
 
+            builder.Property(b => b.IdBoleto).HasColumnName("id_boleto");
+
             builder.Property(b => b.IdentificadorBoleto)
                 .IsRequired()
                 .HasColumnName("identificador_boleto")
@@ -21,7 +23,6 @@ namespace PaymentService.Infrastructure.Data.Configuration
                 .HasColumnType("datetime");
 
             builder.Property(b => b.DataPagamento)
-                .IsRequired()
                 .HasColumnName("data_pagamento")
                 .HasColumnType("datetime");
 

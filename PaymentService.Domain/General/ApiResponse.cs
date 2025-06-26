@@ -1,4 +1,4 @@
-﻿namespace PaymentService.Domain.Models
+﻿namespace PaymentService.Domain.General
 {
     public class ApiResponse
     {

@@ -1,5 +1,5 @@
 ﻿using PaymentService.Domain.DTOs;
-using PaymentService.Domain.Models;
+using PaymentService.Domain.General;
 
 namespace PaymentService.Application.Interfaces
 {

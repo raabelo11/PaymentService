@@ -1,6 +1,6 @@
 ﻿namespace PaymentService.Domain.Enums
 {
-    public enum StatusPagamento
+    public enum StatusBoleto
     {
         Gerado = 0,
         Pendente = 1,

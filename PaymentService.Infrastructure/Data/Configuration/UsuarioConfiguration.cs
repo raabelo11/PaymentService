@@ -36,6 +36,12 @@ namespace PaymentService.Infrastructure.Data.Configuration
                 .HasConversion<int>()
                 .HasColumnType("int");
 
+            builder.Property(p => p.Excluido)
+                .IsRequired()
+                .HasColumnName("excluido")
+                .HasConversion<bool>()
+                .HasColumnType("bit");
+
             builder.ToTable("Users");
         }
     }

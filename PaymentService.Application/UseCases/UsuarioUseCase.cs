@@ -1,5 +1,6 @@
 ﻿using PaymentService.Application.Interfaces;
 using PaymentService.Domain.DTOs;
+using PaymentService.Domain.General;
 using PaymentService.Domain.Interfaces;
 using PaymentService.Domain.Models;
 
@@ -16,7 +17,7 @@ namespace PaymentService.Application.UseCases
                 var Usuario = new Usuario
                 {
                     Nome = cadastroUsuarioDTO.Nome,
-                    Senha = cadastroUsuarioDTO.Senha,
+                    Senha = BCrypt.Net.BCrypt.HashPassword(cadastroUsuarioDTO.Senha),
                     Email = cadastroUsuarioDTO.Email,
                     DataCadastro = DateTime.Now,
                     TipoUsuario = cadastroUsuarioDTO.TipoUsuario
