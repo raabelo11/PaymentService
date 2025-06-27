@@ -18,7 +18,7 @@ namespace PaymentService.Infrastructure.Data.Configuration
             builder.Property(p => p.Senha)
                 .IsRequired()
                 .HasColumnName("senha")
-                .HasColumnType("varchar(50)");
+                .HasColumnType("varchar(250)");
 
             builder.Property(p => p.Email)
                 .IsRequired()

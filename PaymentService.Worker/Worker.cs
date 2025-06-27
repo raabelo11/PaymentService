@@ -1,24 +1,17 @@
 namespace PaymentService.Worker
 {
-    public class Worker : BackgroundService
+    public class Worker(RabbitMQService boletosRead) : BackgroundService
     {
-        private readonly ILogger<Worker> _logger;
-
-        public Worker(ILogger<Worker> logger)
-        {
-            _logger = logger;
-        }
+        private readonly RabbitMQService _boletosRead = boletosRead;
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            while (!stoppingToken.IsCancellationRequested)
+            await _boletosRead.Connection();
+            await _boletosRead.ReceiveMessage("boleto.enviado.queue", async mensagem =>
             {
-                if (_logger.IsEnabled(LogLevel.Information))
-                {
-                    _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                }
-                await Task.Delay(1000, stoppingToken);
-            }
+                Console.WriteLine(mensagem);
+                await Task.CompletedTask;
+            });
         }
     }
 }

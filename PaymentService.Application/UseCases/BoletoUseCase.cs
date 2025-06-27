@@ -19,6 +19,7 @@ namespace PaymentService.Application.UseCases
         {
             try
             {
+                
                 BoletoCriadoReturnValue boletoReturnValue = new BoletoCriadoReturnValue();
 
                 var boleto = new Boleto()

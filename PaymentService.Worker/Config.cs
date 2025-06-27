@@ -1,4 +1,4 @@
-﻿namespace PaymentService.Domain.General
+﻿namespace PaymentService.Worker
 {
     public class Config
     {
@@ -16,10 +16,11 @@
         public required string VirtualHost { get; set; }
         public required Queues Queues { get; set; }
     }
-    
+
     public class Queues
     {
         public required string BoletoEnviado { get; set; }
+        public required string BoletoError { get; set; }
     }
 
     public class Redis
