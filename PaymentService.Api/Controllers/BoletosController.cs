@@ -32,7 +32,5 @@ namespace PaymentService.Api.Controllers
         //EditaBoleto
 
         //ExcluiBoleto
-
-
     }
 }
